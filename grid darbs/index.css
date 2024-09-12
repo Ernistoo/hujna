@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    justify-content: center; /* Centers table horizontally */
+    align-items: center; /* Centers table vertically */
+    height: 100vh; /* Ensures the body takes full viewport height */
+    margin: 0; /* Removes any default body margins */
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 1500px;
+    height: 900px;
+    border: 5px solid black;
+    table-layout: fixed;
+  }
+  th,
+  td {
+    border: 5px solid black;
+    padding: 8px;
+    width: 33.33%; /* Each cell takes 1/3rd of the table width */
+    height: calc(850px / 3); /* Divides the height equally among 3 rows */
+    overflow: hidden; /* Ensures content stays inside the cell */
+    text-align: center;
+    vertical-align: middle;
+  }
+  .container {
+    display: flex;
+    justify-content: center; /* Centers table horizontally */
+    align-items: center;
+  
+    height: auto;
+    width: 50%;
+  }
+  
+  img {
+    height: 209px;
+    width: 209px;
+    opacity: 0;
+    margin-left: 235px;
+    transition: opacity 3s;
+  }
+  
+  .container::before {
+    content: "";
+    position: fixed;
+    margin-left: 235px;
+    width: 209px;
+    height: 209px;
+    background-color: #000; /* Set your desired solid color */
+  
+    transition: opacity 3s;
+  }
+  
+  .container:hover::before {
+    opacity: 0; /* Fade out the solid color */
+  }
+  
+  .container:hover img {
+    opacity: 1; /* Fade in the image */
+  }
+  .button{
+
+ 
+  
+  
+  font-size: 16px;
+  transition: transform 1s ease;
+  }
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-10vh);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  
+  #confetti-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
